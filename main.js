@@ -11,12 +11,22 @@
 
 // app.listen(3333);
 
-const express = require('express');
+/*const express = require('express');
 
 const app = express();
 
 app.get('/', function(Req, res, next){
   res.send('Hello World');
+});
+
+app.listen(3333);*/
+
+const express = require('express');
+
+const app = express();
+
+app.get('/', function(Req, res, next){
+  res.send('하하 반가워 혜민아 사랑해');
 });
 
 app.listen(3333);
