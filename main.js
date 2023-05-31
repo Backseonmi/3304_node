@@ -25,8 +25,16 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', function(Req, res, next){
-  res.send('하하 반가워 혜민아 사랑해');
+//모든 경로에 요청
+app.get('*', function(req, res, next){
+  console.log('당장');
+  next();
+});
+
+//루트(/) 경로에 요청
+app.get('/', function(req, res, next){
+  console.log('하하 반가워 혜민아 사랑해');
+  next();
 });
 
 app.listen(3333);
