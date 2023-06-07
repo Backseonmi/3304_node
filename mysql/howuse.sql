@@ -24,7 +24,7 @@ CREATE TABLE player(
 --데이터 제거
 DROP TABLE player;
 
---데이터 삽입(C)
+--데이터 삽입(C: Insert)
 INSERT INTO player VALUES(1, 'faker', 'mid', 't1', 10, 2, 6);
 INSERT INTO player VALUES(2, 'oner', 'jg', 't1', 2, 5, 14);
 INSERT INTO player VALUES(3, 'zeus', 'top', 't1', 8, 3, 7);
@@ -36,11 +36,11 @@ VALUES
 ('bengi', 'jg', 't1', 4, 5, 17),
 ('JWP', 'mid', 't1', 30, 0, 5);
 
---데이터 조회(R)
+--데이터 조회(R: Select)
 SELECT * FROM player;
 
---데이터 수정(U)
+--데이터 수정(U: Update)
 UPDATE player set name='sungwoong' WHERE name = 'bengi';
 
---데이터 삭제(D)
+--데이터 삭제(D: Delete)
 DELETE FROM player WHERE name = 'sungwoong';

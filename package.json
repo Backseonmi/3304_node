@@ -4,7 +4,7 @@
   "description": "삼미웹정",
   "main": "./main.js",
   "scripts": {
-    "start": "node ./main.js",
+    "start": "nodemon ./mysql/mysql.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "JWP",
@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mysql2": "^3.3.3"
+    "mysql2": "^3.3.3",
+    "nodemon": "^2.0.22"
   }
 }
