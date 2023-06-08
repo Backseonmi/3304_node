@@ -18,4 +18,7 @@ pool.query("SELECT * FROM player", (err, results) => {
   for(const r of results){
     console.log(r);
   }
+})
+.catch(err => {
+  console.error(err);
 });
