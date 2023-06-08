@@ -1,4 +1,4 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const path = require('path');
 
 require('dotenv').config({
@@ -13,8 +13,25 @@ const pool = mysql.createPool({
   database: process.env.DB_DB,
 });
 
-pool.query("SELECT * FROM player", (err, results) => {
-  // console.log(results);
+const insertData = {
+  name: 'bengi',
+  Lane: 'jg',
+  team: '1',
+  kills: 5,
+  deaths: 3,
+  assists: 8
+};
+
+pool.query("INSERT INTO player SET ?", insertData)
+  .then(()=>{
+    console.log("INSERT 성공")
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
+pool.query("SELECT * FROM player")
+.then(([results]) => {
   for(const r of results){
     console.log(r);
   }
