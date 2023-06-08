@@ -13,6 +13,7 @@ const pool = mysql.createPool({
   database: process.env.DB_DB,
 });
 
+//데이터 삽입
 const insertData = {
   name: 'bengi',
   Lane: 'jg',
@@ -22,13 +23,15 @@ const insertData = {
   assists: 8
 };
 
-// pool.query("INSERT INTO player SET ?", insertData)
-//   .then(()=>{
-//     console.log("INSERT 성공")
-//   })
-//   .catch(err => {
-//     console.error(err);
-//   });
+pool.query("INSERT INTO player SET ?", insertData)
+  .then(()=>{
+    console.log("INSERT 성공")
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
+//데이터 업데이트
 const updateData = {
   name: "sungwoong",
   kills: 15,
@@ -42,6 +45,16 @@ pool.query("UPDATE player SET ? WHERE name = ?", [updateData, "bengi"])
 .catch(err => {
   console.error(err);
 });
+
+//데이터 삭제
+pool.query("DELETE FROM player WHERE name = ?","sungwoong")
+.then(() => {
+  console.log("DELETE 성공");
+})
+.catch(err => {
+  console.error(err);
+});
+
 
 pool.query("SELECT * FROM player")
 .then(([results]) => {
